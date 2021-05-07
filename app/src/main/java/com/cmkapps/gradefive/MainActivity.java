@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Initialize variable
     TextView txtTimer;
+    Integer givenAnswers[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 String sDuaration = String.format(Locale.ENGLISH,"%02d : %02d",TimeUnit.MILLISECONDS.toMinutes(l),
                         TimeUnit.MILLISECONDS.toSeconds(l)- TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(l)));
 
-                //set conveted time on textview
+                //set converted time on textview
                 txtTimer.setText(sDuaration);
-
             }
 
             @Override
             public void onFinish() {
                 //on finished
                 Toast.makeText(getApplicationContext(),"Time Up",Toast.LENGTH_SHORT).show();
-
             }
         }.start();
 
